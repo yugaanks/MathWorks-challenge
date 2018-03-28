@@ -1,3 +1,4 @@
+// toggle visibility of forms
 function showAddForm(){ 
 	if(document.getElementById('add').style.visibility==='hidden')
 		document.getElementById('add').style.visibility='visible';
@@ -18,15 +19,17 @@ function showUserForm(){
 	else 
 		document.getElementById('user').style.visibility='visible';
 }
+// toggle methods end
 
+// modify the action attribute of the form, adding the username
 function getUserFormSubmit() {
 	var username=document.getElementById("userInput").value;
 	document.getElementById("getUserForm").action = `http://localhost:3000/users/${username}`;
 	return true;
 }
 
+// sending a xmlhttprequest to the server for deletion
 function deleteUserFormSubmit(e) {
-	//console.log(document.getElementById("usernameInput").value);
 	var username=document.getElementById("deleteUserInput").value;
 	if(username.length>0){
 		var xhttp = new XMLHttpRequest();
@@ -45,6 +48,7 @@ function deleteUserFormSubmit(e) {
 	return false;
 }
 
+// adding a new user, append username to action attribute of the form
 function setFormAction() {
 	var username=document.getElementById("usernameInput").value;
 	document.myForm.action = `/users/${username}`;

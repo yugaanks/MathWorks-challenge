@@ -2,7 +2,7 @@ var faker = require('faker');
 const data = require("../data/");
 const users = data.users;
 
-
+//fake data generator
 function generateSampleData() {
 	for(let i=0;i<500;i++) {
 		var randomDisplayName = faker.name.findName(); // random display name

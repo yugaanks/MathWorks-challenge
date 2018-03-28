@@ -1,11 +1,11 @@
 <script src="{{script}}"></script>
-<h1>Index</h1>
-<a href="/users">Get All Users as JSON String</a>
-<a href="#user" onclick="showUserForm()">Get a user by Username</a>
-<a href="#add" onclick="showAddForm()">Add a new User</a>
-<a href="#delete" onclick="showDeleteForm()">Delete</a>
+<a href="/users">Get All Users as JSON String</a><br>
+<a href="#user" onclick="showUserForm()">Get a user by Username</a><br>
+<a href="#add" onclick="showAddForm()">Add a new User</a><br>
+<a href="#delete" onclick="showDeleteForm()">Delete</a><br>
 
 <div id="user" style="visibility: hidden;">
+    <h3>Get a user by username</h3>
     <form id="getUserForm" name="getUserForm" onsubmit="getUserFormSubmit()">
         <input id="userInput" type="text" placeholder="Enter the user name"/>
         <input type="submit" >
@@ -13,6 +13,7 @@
 </div>
 
 <div id="add" style="visibility: hidden;">
+    <h3>Add a new user</h3>
     <form id="myForm" name="myForm" onsubmit="setFormAction()" method="POST">
         <label>Username: <input type="text" name="username" id="usernameInput"/></label>
         <br>
@@ -25,6 +26,7 @@
 </div>
 
 <div id="delete" style="visibility: hidden;">
+    <h3>Delete a user</h3>
     <form id="deleteForm" name="deleteForm" onsubmit="deleteUserFormSubmit(event)">
         <input id="deleteUserInput" type="text" name="username" placeholder="Enter the user name"/>
         <input type="submit" name="submit"/>

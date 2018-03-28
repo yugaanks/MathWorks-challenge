@@ -4,11 +4,12 @@ const users = data.users;
 
 const constructorMethod = (app) => {
     
-    
+    // index page
 	app.get("/", async (req, res) => {
         res.render('index', {script: '/js/index.js'});
     });
 
+	// get all users
     app.get('/users', (req,res)=>{
     	users.getAllUsers().then((result)=>{
 			res.send(JSON.stringify(result));
@@ -17,6 +18,7 @@ const constructorMethod = (app) => {
 		});
 	});
 
+    // get a user by username
 	app.get('/users/:username', (req, res)=>{
 		users.getUser(req.params.username).then((user)=>{
 			if(user)
@@ -29,8 +31,8 @@ const constructorMethod = (app) => {
 		});
 	});
 
+	// add a user
 	app.post('/users/:username', (req, res)=>{
-		//console.log(req.body);
 		users.getUser(req.params.username).then((user)=>{
 			if(!user) {
 				users.addUser(req.params.username, req.body.displayName, req.body.department).then(()=>{
@@ -47,6 +49,7 @@ const constructorMethod = (app) => {
 		});
 	});
 
+	// delete a user by username
 	app.delete('/users/:username', (req, res)=>{
 		users.getUser(req.params.username).then((user)=>{
 			if(user) {
@@ -68,6 +71,7 @@ const constructorMethod = (app) => {
 		
 	});
 
+	// default 404
     app.use("/*", (req, response) => {
 		response.status(404);    
 	});
