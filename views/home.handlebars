@@ -1,0 +1,25 @@
+
+<table id="myTable">
+    <thead>
+        <tr>
+        	<th></th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+    {{#each result}}
+    	<tr>
+    		<td>{{id}}</td>
+    		<td>{{name}}</td>
+    		<td>{{email}}</td>
+    		<td>{{city}}</td>
+    	</tr>
+    {{/each}}
+    </tbody>
+</table>
+<table id="header-fixed"></table>
+{{#each scripts}}
+  <script src="{{script}}"></script>
+{{/each}}

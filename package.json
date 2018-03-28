@@ -1,0 +1,22 @@
+{
+  "name": "MathWorks-challenge",
+  "version": "1.0.0",
+  "description": "restful app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node src/tasks/seed.js"
+  },
+  "author": "Yugaank Sharma",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "faker": "^4.1.0",
+    "handlebars": "^4.0.11",
+    "mongodb": "^2.2.35",
+    "path": "^0.12.7"
+  }
+}
